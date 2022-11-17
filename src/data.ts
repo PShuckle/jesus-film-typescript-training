@@ -1,7 +1,7 @@
-interface Task {
-  name: string
-  completed: boolean
-  id: string
+export interface Task {
+  name: string;
+  completed: boolean;
+  id: string;
 }
 
-export type { Task }
+// export type { Task }

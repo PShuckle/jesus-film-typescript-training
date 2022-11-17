@@ -1,29 +1,32 @@
-import { Box, Button, TextField } from '@mui/material'
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+// import { Box, Button, TextField } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import { useEffect, Fragment } from "react";
+import { useState } from "react";
 
 interface FormProps {
-  addTask: (taskName: string) => void
+  addTask: (taskName: string) => void;
 }
 
-const Form = ({ addTask }: FormProps) => {
-  const [textInput, setTextInput] = useState('')
+export const Form = ({ addTask }: FormProps) => {
+  const [textInput, setTextInput] = useState("");
 
   const handleTextInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTextInput(e.target.value)
-  }
+    setTextInput(e.target.value);
+  };
 
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    addTask(textInput)
-  }
+    addTask(textInput);
+  };
 
   useEffect(() => {
-    setTextInput('')
-  }, [addTask])
+    setTextInput("");
+  }, [addTask]);
 
   return (
-    <React.Fragment>
-      <Box width="100%" sx={{ display: 'flex' }}>
+    <Fragment>
+      <Box width="100%" sx={{ display: "flex" }}>
         <TextField
           onChange={handleTextInputChange}
           label="Enter Task Name"
@@ -36,8 +39,8 @@ const Form = ({ addTask }: FormProps) => {
           Submit Task
         </Button>
       </Box>
-    </React.Fragment>
-  )
-}
+    </Fragment>
+  );
+};
 
-export default Form
+// export default Form;

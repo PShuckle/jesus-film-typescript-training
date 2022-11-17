@@ -1,17 +1,20 @@
-import { Typography } from '@mui/material'
-import { number } from 'prop-types'
+import { Typography } from "@mui/material";
+import { ReactElement } from "react";
 
 export interface TitleProps {
-  label?: string
-  fontSize: number
+  fontSize: number;
+  label?: string;
 }
 
-const Title = ({ label, fontSize }: TitleProps) => {
+export const Title = ({
+  fontSize,
+  label = "To Do App",
+}: TitleProps): ReactElement => {
   return (
     <Typography variant="h1" fontSize={fontSize}>
-      {label ? label : 'To Do App'}
+      {label}
     </Typography>
-  )
-}
+  );
+};
 
-export default Title
+// export default Title
